@@ -30,22 +30,22 @@ SilverBitcoin is a next-generation Layer-1 blockchain platform built entirely in
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     SilverBitcoin Node                       │
+│                     SilverBitcoin Node                      │
 ├─────────────────────────────────────────────────────────────┤
 │  API Gateway  │  CLI Tool  │  Metrics (Prometheus)          │
-│  (JSON-RPC)   │            │                                 │
-├───────────────┴────────────┴─────────────────────────────────┤
-│           Transaction Coordinator                            │
-├──────────────────────────┬───────────────────────────────────┤
-│  Consensus Engine        │  Execution Engine                 │
-│  (Mercury Protocol)      │  (Quantum VM)                     │
-│  - Cascade Mempool       │  - Parallel Executor              │
-│  - Flow Graph            │  - Fuel Metering                  │
-├──────────────────────────┴───────────────────────────────────┤
-│              Object Store (RocksDB)                          │
-├──────────────────────────┬───────────────────────────────────┤
+│  (JSON-RPC)   │            │                                │
+├───────────────┴────────────┴────────────────────────────────┤
+│           Transaction Coordinator                           │
+├──────────────────────────┬──────────────────────────────────┤
+│  Consensus Engine        │  Execution Engine                │
+│  (Mercury Protocol)      │  (Quantum VM)                    │
+│  - Cascade Mempool       │  - Parallel Executor             │
+│  - Flow Graph            │  - Fuel Metering                 │
+├──────────────────────────┴──────────────────────────────────┤
+│              Object Store (RocksDB)                         │
+├──────────────────────────┬──────────────────────────────────┤
 │  Network Layer (P2P)     │  Indexer (PostgreSQL)            │
-└──────────────────────────┴───────────────────────────────────┘
+└──────────────────────────┴──────────────────────────────────┘
 ```
 
 ### Core Components
