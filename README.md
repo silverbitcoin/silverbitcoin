@@ -22,7 +22,7 @@ We're not trying to replace Bitcoin. We're completing its vision:
 - **Speed**: Sub-second finality (480ms) vs Bitcoin's 60 minutes
 - **Accessibility**: Low entry barriers for validators and users
 - **Usability**: Full smart contract support for DeFi, NFTs, and real-world applications
-- **Scalability**: **160,000+ TPS** currently, targeting 1,000,000 TPS with GPU acceleration
+- **Scalability**: **160,000+ TPS** currently, targeting 1M+ TPS with GPU acceleration
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Rust Version](https://img.shields.io/badge/Rust-1.75+-orange?logo=rust)](https://www.rust-lang.org)
@@ -75,6 +75,13 @@ SilverBitcoin is a next-generation Layer-1 blockchain platform built entirely in
 - **100-1000x Speedup**: Batch signature verification
 - **10-100x Speedup**: Hash computation and execution
 - **Auto-Detection**: Automatic GPU selection and CPU fallback
+
+### 🔐 Recursive zk-SNARKs (Mina-Inspired)
+- **Constant-Size Blockchain**: ~100 MB regardless of history
+- **Compression**: constant size ~100 MB 
+- **Instant Light Client Sync**: Seconds instead of days
+- **Mobile-Friendly Verification**: Full verification on mobile devices
+- **Proof Incentives**: Validators earn 10 SBTC per proof
 
 ---
 
@@ -143,7 +150,7 @@ SilverBitcoin/
 │   │   ├── silver-core/       # Core types and utilities
 │   │   ├── silver-crypto/     # Quantum-resistant cryptography (SPHINCS+, Dilithium3, Kyber1024)
 │   │   ├── silver-storage/    # RocksDB storage layer
-│   │   ├── silver-indexer/    # MongoDB indexer (optional query layer)
+│   │   ├── silver-archive-chain/ # Archive Chain (3 TPS historical record)
 │   │   ├── silver-api/        # JSON-RPC API gateway
 │   │   ├── silver-consensus/  # Cascade + Mercury Protocol consensus
 │   │   ├── silver-execution/  # Quantum VM execution engine
@@ -152,8 +159,9 @@ SilverBitcoin/
 │   │   ├── silver-cli/        # Command-line interface
 │   │   ├── silver-sdk/        # Rust SDK for developers
 │   │   ├── silver-gpu/        # GPU acceleration (OpenCL/CUDA/Metal)
+│   │   ├── silver-zksnark/    # Recursive zk-SNARKs (Mina-style constant-size blockchain)
 │   │   ├── silver-coordinator/# Transaction coordinator
-│   │   └── silver-light-client/ # Light client support
+│   │   └── silver-light-client/ # Light client with query system
 │   ├── quantum/               # Quantum language implementation
 │   │   ├── quantum-compiler/  # Quantum to bytecode compiler
 │   │   ├── quantum-vm/        # Bytecode interpreter
@@ -265,7 +273,7 @@ silver-cli call \
 ├──────────────────────────┴──────────────────────────────────┤
 │              Object Store (RocksDB)                         │
 ├──────────────────────────┬──────────────────────────────────┤
-│  Network Layer (P2P)     │  Indexer (MongoDB)               │
+│  Network Layer (P2P)     │  Archive Chain (Historical)      │
 └──────────────────────────┴──────────────────────────────────┘
 ```
 
@@ -402,23 +410,6 @@ Minimum Fuel Price:  1,000 MIST per fuel unit
 ```
 10,000 fuel × 1,000 MIST = 10,000,000 MIST = 0.01 SBTC
 ```
-
-### Hardware Requirements
-
-**Minimum Requirements (Validator Node):**
-- CPU: 4+ cores (Intel i5 or AMD Ryzen 5 equivalent)
-- RAM: 8GB DDR4
-- Storage: 100GB SSD
-- Network: 10 Mbps stable connection
-
-**Recommended (Production Validator):**
-- CPU: 16+ cores (Intel i7/i9 or AMD Ryzen 7/9)
-- RAM: 32GB+ DDR4
-- Storage: 1TB+ NVMe SSD
-- Network: 1 Gbps stable connection
-- GPU: NVIDIA RTX 4090 or equivalent (optional, for 10-100x speedup)
-
----
 
 ## 🔐 Security
 
@@ -557,8 +548,8 @@ Minimum Fuel Price:  1,000 MIST per fuel unit
 
 ### 2026+ Research & Development
 
-**Performance Enhancements:**
-- 📋 **GPU Acceleration** - CUDA/OpenCL/Metal support (100-1000× speedup)
+**🌟Performance Enhancements:**
+- 📋 **GPU Acceleration** - CUDA/OpenCL/Metal support (100-1000× speedup for proof generation)
 - 📋 **Parallel Processing** - Multi-threaded transaction validation (4-8× improvement)
 - 📋 **State Optimization** - Advanced pruning and compression (60-80% storage reduction)
 - 📋 **Target**: 1,000,000 TPS by 2027
