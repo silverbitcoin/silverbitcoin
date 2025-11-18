@@ -4,258 +4,59 @@
 
 ![SilverBitcoin Logo](logo.png)
 
-## 🌟 Our Story: The Second Chance
+---
 
-**You didn't miss Bitcoin. You found something better.**
+[![Build Status](https://img.shields.io/github/workflow/status/silverbitcoin/silverbitcoin/CI)](https://github.com/silverbitcoin/silverbitcoin/actions)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Rust Version](https://img.shields.io/badge/rust-1.75%2B-orange.svg)](https://www.rust-lang.org)
+[![Discord](https://img.shields.io/discord/123456789?label=discord)](https://discord.gg/silverbitcoin)
+
+**[English](README.md)** | [中文](docs/i18n/README.zh.md) | [Español](docs/i18n/README.es.md) | [Français](docs/i18n/README.fr.md) | [Deutsch](docs/i18n/README.de.md) | [日本語](docs/i18n/README.ja.md) | [한국어](docs/i18n/README.ko.md) | [Português](docs/i18n/README.pt.md) | [Русский](docs/i18n/README.ru.md) | [العربية](docs/i18n/README.ar.md) | [हिन्दी](docs/i18n/README.hi.md) | [Türkçe](docs/i18n/README.tr.md)
+
+SilverBitcoin is a next-generation high-performance Layer-1 blockchain platform built entirely in Rust, designed to be the "people's blockchain" - combining Bitcoin's revolutionary spirit with modern performance, accessibility, and usability. The system provides a Distributed Resilience Protocol (DRP) consensus mechanism, asset-centric data model, concurrent transaction execution, and a complete node infrastructure for building decentralized applications.
+
+🌟 Our Story: The Second Chance
+You didn't miss Bitcoin. You found something better.
 
 When Bitcoin emerged in 2009, it promised financial freedom for everyone. But as its value soared to $100,000+, that promise became a distant dream for most people. The very thing that made Bitcoin valuable—its scarcity—also made it inaccessible.
 
-**SilverBitcoin was born from a simple question:** *What if we could capture Bitcoin's revolutionary spirit, but make it accessible, fast, and practical for everyday use?*
+SilverBitcoin was born from a simple question: What if we could capture Bitcoin's revolutionary spirit, but make it accessible, fast, and practical for everyday use?
 
-### 💫 Why "Silver" Bitcoin?
-
+💫 Why "Silver" Bitcoin?
 Just as silver has always been "the people's precious metal"—affordable, practical, and valuable—SilverBitcoin is designed to be the blockchain for everyone. While Bitcoin became digital gold, locked away in vaults, SilverBitcoin flows freely, powering real transactions, real applications, and real opportunities.
 
-### 🚀 Our Mission
-
+🚀 Our Mission
 We're not trying to replace Bitcoin. We're completing its vision:
-- **Speed**: Sub-second finality (480ms) vs Bitcoin's 60 minutes
-- **Accessibility**: Low entry barriers for validators and users
-- **Usability**: Full smart contract support for DeFi, NFTs, and real-world applications
-- **Scalability**: **160,000+ TPS** currently, targeting 1M+ TPS with GPU acceleration
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Rust Version](https://img.shields.io/badge/Rust-1.75+-orange?logo=rust)](https://www.rust-lang.org)
-[![Security](https://img.shields.io/badge/Security-Quantum--Resistant-success.svg)](docs/security.md)
-[![Consensus](https://img.shields.io/badge/Consensus-Cascade+Mercury-blue.svg)](.kiro/specs/silverbitcoin-blockchain/design.md)
+Speed: Sub-second finality (480ms) vs Bitcoin's 60 minutes
+Accessibility: Low entry barriers for validators and users
+Usability: Full smart contract support for DeFi, NFTs, and real-world applications
+Scalability: 160K+ TPS currently, targeting 1M+ TPS with GPU acceleration
+License: CC BY 4.0 Rust Version Security Consensus
 
-[Website](https://silverbitcoin.org) • [Explorer](https://blockchain.silverbitcoin.org) • [Whitepaper](WHITEPAPER.md) • [Telegram](https://t.me/SilverBitcoinLabs)
+Website • Explorer • Whitepaper • Telegram
 
-</div>
+## 🚀 Key Features
 
----
+- **⚡ Sub-Second Finality**: 500ms snapshot intervals for near-instant transaction confirmation
+- **🔒 Quantum-Resistant**: Post-quantum cryptography (SPHINCS+, Dilithium3, Kyber1024) with 512-bit security
+- **📈 High Throughput**: 160K+ TPS (current), targeting 1M+ TPS with GPU acceleration
+- **🎯 Accessible**: Low validator requirements (1M SBTC stake) and affordable transaction fees
+- **🔧 Developer-Friendly**: Quantum smart contract language with resource safety guarantees
+- **🌐 Scalable**: Parallel execution engine with horizontal scaling capability
 
-## 🎯 Key Features
+## 📊 Performance Targets
 
-SilverBitcoin is a next-generation Layer-1 blockchain platform built entirely in **Rust**, featuring:
+| Metric | Target | Status |
+|--------|--------|--------|
+| Transaction Finality | < 500ms | ✅ 500ms |
+| Throughput (CPU) | 20,000+ TPS | ✅ Designed |
+| Throughput (GPU) | 200,000+ TPS | 🔄 In Progress |
+| RPC Query Latency | < 100ms | ✅ Designed |
+| Validator Minimum Stake | 1M SBTC | ✅ Configured |
+| Average Transaction Fee | < $0.01 | ✅ Designed |
 
-### ⚡ Ultra-Fast Performance
-- **480ms Finality**: Sub-second transaction confirmation
-- **160,000+ TPS**: Current throughput with horizontal scaling
-- **1M+ TPS Target**: With GPU acceleration and optimizations
-- **Parallel Execution**: Multi-threaded transaction processing
-
-### 🔒 Quantum-Resistant Security
-- **SPHINCS+**: Post-quantum hash-based signatures
-- **Dilithium3**: NIST Level 3 lattice-based signatures
-- **Kyber1024**: Post-quantum key encapsulation
-- **Blake3-512**: 512-bit hashing for quantum resistance
-- **Hybrid Mode**: Classical + post-quantum for transition period
-
-### 🌊 Cascade + Mercury Protocol
-- **DAG-Based Mempool**: Parallel batch creation by validators
-- **Deterministic Ordering**: Flow graph traversal without leader election
-- **Byzantine Fault Tolerance**: Tolerates up to 1/3 malicious validators
-- **Distributed Resilience**: No single point of failure
-
-### 🧠 Quantum VM
-- **Move-Inspired**: Resource-oriented programming model
-- **Linear Types**: Compile-time safety guarantees
-- **Fuel Metering**: Deterministic execution costs
-- **Parallel Execution**: Independent transactions run concurrently
-
-### 💎 Object-Centric Model
-- **Owned Objects**: Single-owner, fast execution
-- **Shared Objects**: Multi-transaction access with consensus
-- **Immutable Objects**: Read-only, no consensus needed
-- **Flexible Attributes**: Dynamic key-value pairs
-
-### 🚀 GPU Acceleration
-- **OpenCL/CUDA/Metal**: Cross-platform GPU support
-- **100-1000x Speedup**: Batch signature verification
-- **10-100x Speedup**: Hash computation and execution
-- **Auto-Detection**: Automatic GPU selection and CPU fallback
-
-### 🔐 Recursive zk-SNARKs (Mina-Inspired)
-- **Constant-Size Blockchain**: ~100 MB regardless of history
-- **Compression**: constant size ~100 MB 
-- **Instant Light Client Sync**: Seconds instead of days
-- **Mobile-Friendly Verification**: Full verification on mobile devices
-- **Proof Incentives**: Validators earn 10 SBTC per proof
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- **Rust**: 1.75 or later
-- **System Dependencies**:
-  - RocksDB development libraries
-  - OpenSSL development libraries
-  - Protocol Buffers compiler
-  - (Optional) CUDA toolkit for GPU acceleration
-  - (Optional) OpenCL drivers for GPU acceleration
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/silverbitcoin/silverbitcoin.git
-cd silverbitcoin/silverbitcoin-blockchain
-
-# Build all components
-cargo build --release
-
-# Run tests
-cargo test --all-features
-
-# Run benchmarks
-cargo bench
-```
-
-### Running a Node
-
-```bash
-# Start a validator node
-cargo run --release --bin silver-node -- \
-  --config config/validator.toml \
-  --genesis config/genesis.json \
-  --validator-keys keys/validator.json
-
-# Start a full node (non-validator)
-cargo run --release --bin silver-node -- \
-  --config config/fullnode.toml \
-  --genesis config/genesis.json
-```
-
-### Development Network
-
-```bash
-# Start a local single-validator network
-silver-cli dev-net
-
-# Or use the node binary directly
-silver-node --config dev-config.toml --genesis genesis-dev.json
-```
-
----
-
-## 📁 Project Structure
-
-```
-SilverBitcoin/
-├── silverbitcoin-blockchain/  # Rust blockchain implementation
-│   ├── crates/
-│   │   ├── silver-core/       # Core types and utilities
-│   │   ├── silver-crypto/     # Quantum-resistant cryptography (SPHINCS+, Dilithium3, Kyber1024)
-│   │   ├── silver-storage/    # RocksDB storage layer
-│   │   ├── silver-archive-chain/ # Archive Chain (3 TPS historical record)
-│   │   ├── silver-api/        # JSON-RPC API gateway
-│   │   ├── silver-consensus/  # Cascade + Mercury Protocol consensus
-│   │   ├── silver-execution/  # Quantum VM execution engine
-│   │   ├── silver-network/    # libp2p P2P networking
-│   │   ├── silver-node/       # Main node binary
-│   │   ├── silver-cli/        # Command-line interface
-│   │   ├── silver-sdk/        # Rust SDK for developers
-│   │   ├── silver-gpu/        # GPU acceleration (OpenCL/CUDA/Metal)
-│   │   ├── silver-zksnark/    # Recursive zk-SNARKs (Mina-style constant-size blockchain)
-│   │   ├── silver-coordinator/# Transaction coordinator
-│   │   └── silver-light-client/ # Light client with query system
-│   ├── quantum/               # Quantum language implementation
-│   │   ├── quantum-compiler/  # Quantum to bytecode compiler
-│   │   ├── quantum-vm/        # Bytecode interpreter
-│   │   ├── quantum-stdlib/    # Standard library
-│   │   └── quantum-cli/       # Quantum package manager
-│   ├── docs/                  # Technical documentation
-│   ├── benchmarks/            # Performance benchmarks
-│   ├── docker/                # Docker deployment files
-│   └── scripts/               # Build and deployment scripts
-├── website/                   # Official website (silverbitcoin.org)
-├── blockchain-explorer/       # Blockchain explorer UI
-├── staking-dashboard/         # Staking platform
-├── validator-dashboard/       # Validator management panel
-├── silver-wallet/             # Wallet application
-├── whitepaper/                # Technical whitepaper
-└── docs/                      # Project-wide documentation
-```
-
----
-
-## 🌐 Network Information
-
-### Mainnet Configuration
-
-| Parameter | Value |
-|-----------|-------|
-| **Network Name** | SilverBitcoin Mainnet |
-| **JSON-RPC URL** | `https://rpc.silverbitcoin.org/` |
-| **WebSocket URL** | `wss://ws.silverbitcoin.org/` |
-| **Block Explorer** | https://blockchain.silverbitcoin.org/ |
-| **Snapshot Interval** | 480ms (sub-second finality) |
-| **Consensus** | Cascade + Mercury Protocol |
-| **Currency Symbol** | SBTC |
-| **Currency Decimals** | 9 (1 SBTC = 1,000,000,000 MIST) |
-| **Maximum Supply** | 1,000,000,000 SBTC (HARD CAP) |
-| **Genesis Supply** | 1,000,000,000 SBTC (all minted at genesis) |
-| **Presale Allocation** | 100M SBTC (10% of total supply) |
-| **Circulating (TGE)** | 60M SBTC (6% - includes partial presale unlock + liquidity + marketing) |
-| **Long-term Circulating** | ~200-300M SBTC (deflationary from Year 11+) |
-
-### Connect with Rust SDK
-
-```rust
-use silver_sdk::{SilverClient, types::*};
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Connect to SilverBitcoin
-    let client = SilverClient::new("https://rpc.silverbitcoin.org/").await?;
-    
-    // Query object
-    let object = client.get_object(object_id).await?;
-    println!("Object: {:?}", object);
-    
-    // Submit transaction
-    let tx = TransactionBuilder::new()
-        .transfer(recipient, amount)
-        .build()?;
-    
-    let digest = client.submit_transaction(tx).await?;
-    println!("Transaction: {}", hex::encode(digest));
-    
-    Ok(())
-}
-```
-
-### CLI Commands
-
-```bash
-# Generate keypair
-silver-cli keygen
-
-# Transfer tokens
-silver-cli transfer \
-  --to <recipient-address> \
-  --amount 1000000000 \
-  --fuel-budget 50000000
-
-# Query object
-silver-cli object <object-id>
-
-# Call Quantum function
-silver-cli call \
-  --package <package-id> \
-  --module <module-name> \
-  --function <function-name> \
-  --args <arg1> <arg2>
-```
-
----
-
-## 🏗️ Architecture
-
-### System Overview
+## 🏗️ Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -277,143 +78,144 @@ silver-cli call \
 └──────────────────────────┴──────────────────────────────────┘
 ```
 
-### Cascade + Mercury Protocol
+### Core Components
 
-**Cascade Mempool (Phase 1):**
-- Worker-based batch creation (500 tx/batch, 512KB max)
-- Flow graph with cryptographic links (Blake3-512)
-- Parallel batch propagation (<50ms target)
-- Certificate collection (2/3+ stake signatures)
+- **Cascade Mempool**: Graph-flow based transaction ordering for high throughput
+- **Mercury Protocol**: Distributed Resilience Protocol (DRP) consensus with Byzantine fault tolerance
+- **Quantum VM**: Resource-oriented smart contract execution with linear type system
+- **Parallel Executor**: Multi-core transaction processing with dependency analysis
+- **GPU Acceleration**: OpenCL/CUDA/Metal support for 100-1000x speedup
 
-**Mercury Protocol (Phase 2):**
-- Deterministic flow graph traversal
-- Topological sort with hash-based tie-breaking
-- Ordered transaction execution
-- Snapshot creation (480ms intervals)
-- Sub-second finality
+## 🛠️ Building from Source
 
-**Key Properties:**
-- **Byzantine Fault Tolerance**: Tolerates up to 1/3 malicious validators
-- **Parallel Processing**: Independent transactions execute concurrently
-- **Energy Efficient**: No wasteful mining
-- **Scalable**: 160,000+ TPS currently, 1M+ TPS target
+### Prerequisites
 
----
+- **Rust**: 1.85 or later
+- **System Dependencies**:
+  - RocksDB development libraries
+  - OpenSSL development libraries
+  - Protocol Buffers compiler
+  - (Optional) CUDA toolkit for GPU acceleration
+  - (Optional) OpenCL drivers for GPU acceleration
 
-## 💼 Use Cases
-
-### 💰 DeFi Applications
-- Decentralized exchanges with sub-second finality
-- Lending protocols with high throughput
-- Yield farming with low fees
-- Derivatives trading with fast settlement
-
-### 🎮 Gaming & NFTs
-- GameFi with instant transactions
-- NFT marketplaces with high volume
-- Metaverse economies with real-time interactions
-- Digital collectibles with provable ownership
-
-### 🏢 Enterprise Solutions
-- Supply chain tracking with immutable records
-- Identity management with privacy
-- Payment systems with instant settlement
-- Asset tokenization with regulatory compliance
-
----
-
-## 🛠️ Development
-
-### Quantum Language
-
-SilverBitcoin uses **Quantum**, a Move-inspired smart contract language with:
-- Linear types and borrow checking
-- Object-centric programming model
-- Resource safety guarantees
-- Bytecode compilation
-
-### Example Quantum Module
-
-```rust
-module silver::coin {
-    use silver::object::{Self, UID};
-    use silver::transfer;
-    use silver::tx_context::{Self, TxContext};
-
-    struct Coin has key, store {
-        id: UID,
-        balance: u64,
-    }
-
-    public fun mint(amount: u64, ctx: &mut TxContext): Coin {
-        Coin {
-            id: object::new(ctx),
-            balance: amount,
-        }
-    }
-
-    public fun transfer(coin: Coin, recipient: address) {
-        transfer::transfer(coin, recipient)
-    }
-
-    public fun balance(coin: &Coin): u64 {
-        coin.balance
-    }
-}
-```
-
-### Create a Quantum Package
+### Installation
 
 ```bash
-# Create new package
-quantum new my_package
-cd my_package
+# Clone the repository
+git clone https://github.com/silverbitcoin/silverbitcoin.git
+cd silverbitcoin
 
-# Build package
-quantum build
+# Build all components
+cargo build --release
 
 # Run tests
-quantum test
+cargo test --all-features
 
-# Publish to blockchain
-quantum publish --fuel-budget 100000000
+# Run benchmarks
+cargo bench
 ```
 
----
+### Build Targets
 
-## 📊 Performance Metrics
+```bash
+# Build node binary
+cargo build --release -p silver-node
 
-### Network Statistics
+# Build CLI tool
+cargo build --release -p silver-cli
 
-- **Snapshot Interval**: 480ms (sub-second finality)
-- **Throughput**: 160,000+ TPS (current), 1,000,000 TPS (target with GPU)
-- **Batch Size**: 500 transactions or 512KB (whichever comes first)
-- **Batch Propagation**: <50ms target
-- **Finality**: Sub-second (after snapshot)
-- **Consensus**: Cascade + Mercury Protocol
-- **Byzantine Tolerance**: Up to 1/3 malicious validators
+# Build indexer
+cargo build --release -p silver-indexer
 
-### Fuel Costs
+# Build Quantum compiler
+cargo build --release -p quantum-cli
 
-SilverBitcoin uses **fuel metering** for transaction costs:
-
-```
-Simple Transfer:     ~1,000 fuel units
-Object Creation:     ~5,000 fuel units
-Quantum Function:    ~10,000 fuel units (varies)
-Module Publish:      ~100,000 fuel units
-
-Minimum Fuel Price:  1,000 MIST per fuel unit
+# Build with GPU support
+cargo build --release --features gpu
 ```
 
-**Example Transaction Cost:**
-```
-10,000 fuel × 1,000 MIST = 10,000,000 MIST = 0.01 SBTC
+## 🚦 Quick Start
+
+### Running a Local Development Network
+
+```bash
+# Start a single-validator development network
+silver-cli dev-net
+
+# Or use the node binary directly
+silver-node --config dev-config.toml --genesis genesis-dev.json
 ```
 
-## 🔐 Security
+### Generating a Keypair
 
-### Quantum-Resistant Cryptography
+```bash
+# Generate new keypair
+silver keygen
+
+# Generate with mnemonic
+silver keygen --format mnemonic
+
+# Import existing key
+silver keygen --import <private-key>
+```
+
+### Transferring Tokens
+
+```bash
+# Transfer tokens
+silver transfer <recipient-address> <amount>
+
+# Transfer with custom fuel budget
+silver transfer <recipient-address> <amount> --fuel 1000000
+```
+
+### Querying Blockchain State
+
+```bash
+# Query object by ID
+silver query <object-id>
+
+# Query objects owned by address
+silver query --owner <address>
+
+# Query transaction status
+silver query --tx <transaction-digest>
+```
+
+## 📦 Project Structure
+
+```
+silverbitcoin/
+├── crates/
+│   ├── silver-core/           # Core types and traits
+│   ├── silver-consensus/      # Mercury Protocol + Cascade
+│   ├── silver-execution/      # Quantum VM + parallel executor
+│   ├── silver-storage/        # RocksDB wrapper + object store
+│   ├── silver-network/        # P2P networking (libp2p)
+│   ├── silver-api/            # JSON-RPC server
+│   ├── silver-crypto/         # Cryptographic primitives
+│   ├── silver-cli/            # Command-line tool
+│   ├── silver-archive-chain/  # Archive Chain (3 TPS historical record)
+│   ├── silver-light-client/   # Light Client with query system
+│   ├── silver-sdk/            # Rust SDK for clients
+│   ├── silver-node/           # Main node binary
+│   └── silver-gpu/            # GPU acceleration layer
+├── quantum/
+│   ├── quantum-compiler/      # Quantum to bytecode compiler
+│   ├── quantum-vm/            # Bytecode interpreter
+│   ├── quantum-stdlib/        # Standard library
+│   └── quantum-cli/           # Quantum package manager
+├── tests/
+│   ├── integration/           # Integration tests
+│   ├── performance/           # Benchmarks
+│   └── stress/                # Stress tests
+├── docs/                      # Documentation
+└── scripts/                   # Build and deployment scripts
+```
+
+## 🔐 Cryptography
+
+### Quantum-Resistant Schemes
 
 | Scheme | Type | Security | Size | Speed | Use Case |
 |--------|------|----------|------|-------|----------|
@@ -429,201 +231,127 @@ Minimum Fuel Price:  1,000 MIST per fuel unit
 - **Key Encryption**: XChaCha20-Poly1305 + Kyber1024 + Argon2id
 - **HD Wallets**: BIP32/BIP39 extended to 512-bit derivation
 
-### Important Security Notes
+## 🎓 Smart Contracts (Quantum Language)
 
-- 🔒 **Never commit private keys** (`keys/*.key`, `keys/*.json`)
-- 🔒 **Secure validator keys** (protocol, network, worker keys)
-- 🔒 **Use SSL/TLS for public RPC** (Nginx reverse proxy with Let's Encrypt)
-- 🔒 **Restrict RPC access** to trusted IPs only
-- 🔒 **Enable key encryption** (XChaCha20-Poly1305 with strong passphrase)
-- 🔒 **Backup keys securely** (encrypted, offline storage)
-- 🔒 **Keep software updated** (security patches and upgrades)
+### Example Contract
 
----
+```rust
+module silver::coin {
+    use silver::object::{Self, UID};
+    use silver::transfer;
+    
+    // Resource type (linear)
+    struct Coin has key, store {
+        id: UID,
+        value: u64,
+    }
+    
+    // Mint new coins
+    public fun mint(value: u64, ctx: &mut TxContext): Coin {
+        Coin {
+            id: object::new(ctx),
+            value,
+        }
+    }
+    
+    // Transfer coins
+    public fun transfer(coin: Coin, recipient: address) {
+        transfer::transfer(coin, recipient)
+    }
+}
+```
 
-## 💰 Tokenomics
+### Key Features
 
-### Hard Cap: 1 Billion SBTC (FIXED)
-
-**Supply Model:**
-- **Maximum Supply:** 1,000,000,000 SBTC (NEVER EXCEEDS)
-- **Genesis Allocation:** All 1B minted at genesis
-- **Emission:** 20-year schedule from Validator Rewards Pool
-- **Fee Burning:** 30% → 80% (increasing over time)
-- **Long-term:** Deflationary from Year 11 onwards
-
-**Emission Schedule:**
-
-| Phase | Years | Annual Emission | Fee Burning | Status |
-|-------|-------|-----------------|-------------|--------|
-| Bootstrap | 1-5 | 50M SBTC | 30% | High rewards |
-| Growth | 6-10 | 30M SBTC | 50% | Balanced |
-| Maturity | 11-20 | 10M SBTC | 70% | Deflationary |
-| Perpetual | 20+ | 0 SBTC | 80% | Ultra-deflationary |
-
-**Token Distribution:**
-- Community Reserve: 30% (300M SBTC)
-- Validator Rewards Pool: 25% (250M SBTC)
-- Ecosystem Fund: 15% (150M SBTC)
-- Presale/Public: 10% (100M SBTC) - Avalanche-inspired
-- Team & Advisors: 10% (100M SBTC) - 4 year vest
-- Foundation: 5% (50M SBTC)
-- Early Investors: 5% (50M SBTC) - 2 year vest
-
-**Presale Pricing :**
-- Seed Round: $0.33 per SBTC (20M SBTC, 30% bonus) → $6.6M
-  - TGE Unlock: 20% (4M SBTC)
-  - Vesting: 80% over 12 months
-- Private Sale: $0.50 per SBTC (30M SBTC, 20% bonus) → $15M
-  - TGE Unlock: 30% (9M SBTC)
-  - Vesting: 70% over 8 months
-- Public Presale: $0.50 per SBTC (50M SBTC, 10% bonus) → $25M
-  - TGE Unlock: 50% (25M SBTC)
-  - Vesting: 50% over 4 months
-- **Total Presale: 100M SBTC (10% of supply)**
-- **Total Raise: $46.6M**
-
-**TGE (Token Generation Event):**
-- Listing Price: $3.00 per SBTC (6x from public)
-- Initial Circulating: 60M SBTC (6%)
-  - Presale Unlock: 38M SBTC (4M + 9M + 25M)
-  - Liquidity Pool: 10M SBTC
-  - Marketing/Airdrops: 5M SBTC
-  - Team Initial: 7M SBTC
-- Initial Market Cap: $180M (60M × $3.00)
-- Fully Diluted Valuation: $3B (1B × $3.00)
-
-**Key Features:**
-- ✅ **Hard Cap:** 1B SBTC maximum, never more
-- ✅ **Deflationary:** Fee burning creates scarcity
-- ✅ **Sustainable:** 20-year emission schedule
-- ✅ **Ultra-Scarce:** ~200-300M circulating long-term
-- ✅ **High APY:** 10-30%+ as supply shrinks
-
-**Detailed Tokenomics:** [TOKENOMICS.md](TOKENOMICS.md)
-
----
+- **Linear Types**: Resources cannot be copied or dropped
+- **Resource Safety**: Compile-time guarantees prevent double-spending
+- **Fuel Metering**: Deterministic execution costs
+- **Formal Verification**: Type system enables formal proofs
 
 ## 📚 Documentation
 
+- **[Architecture Guide](docs/architecture.md)**: System design and component interactions
+- **[Developer Guide](docs/developer-guide.md)**: Building applications on SilverBitcoin
+- **[Operator Guide](docs/operator-guide.md)**: Running and maintaining nodes
+- **[Quantum Language Reference](docs/quantum-reference.md)**: Smart contract language documentation
+- **[API Reference](docs/api-reference.md)**: JSON-RPC API documentation
 
-### Developer Guides
+## 🧪 Testing
 
-- **[Quantum Language Guide](docs/quantum-language.md)** - Smart contract development
-- **[Rust SDK Documentation](silverbitcoin-blockchain/crates/silver-sdk/README.md)** - SDK usage and examples
-- **[CLI Reference](silverbitcoin-blockchain/crates/silver-cli/README.md)** - Command-line tool documentation
-- **[API Reference](silverbitcoin-blockchain/crates/silver-api/README.md)** - JSON-RPC API documentation
+```bash
+# Run all tests
+cargo test --all-features
 
-### Validator Guides
+# Run specific test suite
+cargo test -p silver-consensus
 
-- **[Validator Setup](docs/validator-setup.md)** - How to run a validator
-- **[Key Management](docs/key-management.md)** - Secure key handling
-- **[Monitoring](docs/monitoring.md)** - Node monitoring and metrics
+# Run integration tests
+cargo test --test '*'
 
-### Technical Papers
+# Run benchmarks
+cargo bench
 
-- **[Whitepaper](WHITEPAPER.md)** - SilverBitcoin technical whitepaper
-- **[Cascade Protocol](docs/cascade-protocol.md)** - DAG-based mempool
-- **[Mercury Protocol](docs/mercury-protocol.md)** - Deterministic ordering
-- **[Quantum VM](docs/quantum-vm.md)** - Bytecode interpreter design
+# Run stress tests
+cargo test --release --test stress_test
+```
 
----
+## 📊 Monitoring
 
-## 📈 Roadmap
+### Prometheus Metrics
 
-### Q4 2025 (Current)
-- ✅ Production Mainnet Launch (November 2025)
-- ✅ Cascade + Mercury Protocol Consensus
-- ✅ Quantum VM Execution Engine
-- ✅ Post-Quantum Cryptography
-- 🔄 DeFi Ecosystem Growth
-- 🔄 Developer Tools & SDKs
+The node exposes Prometheus metrics on port 9184:
 
-### Q1-Q2 2026
-- 🚀 Enhanced Governance Features
-- 🚀 Cross-Chain Bridge Development
-- 🚀 DeFi Protocol Partnerships
-- 🚀 Mobile Wallet Launch
-- 🚀 Enterprise Integrations
+```bash
+curl http://localhost:9184/metrics
+```
 
-### 2026+ Research & Development
+Key metrics:
+- `silver_snapshots_produced_total`: Total snapshots produced
+- `silver_transactions_executed_total`: Total transactions executed
+- `silver_consensus_latency_seconds`: Consensus latency histogram
+- `silver_execution_latency_seconds`: Execution latency histogram
+- `silver_peer_count`: Current peer count
 
-**🌟Performance Enhancements:**
-- 📋 **GPU Acceleration** - CUDA/OpenCL/Metal support (100-1000× speedup for proof generation)
-- 📋 **Parallel Processing** - Multi-threaded transaction validation (4-8× improvement)
-- 📋 **State Optimization** - Advanced pruning and compression (60-80% storage reduction)
-- 📋 **Target**: 1,000,000 TPS by 2027
+### Health Check
 
-**Scaling Solutions:**
-- 📋 **Layer 2 Rollups** - Optimistic and ZK-Rollups (100-1000× compression)
-- 📋 **Horizontal Sharding** - Multiple parallel chains (10× per shard)
+```bash
+curl http://localhost:9545/health
+```
 
-**Security & Privacy:**
-- 📋 **Advanced Privacy** - Zero-knowledge proofs and confidential transactions
-- 📋 **Cross-Chain Bridges** - Secure interoperability with major blockchains
+## 🤝 Contributing
 
----
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 🤝 Community
+### Development Workflow
 
-### Get Involved
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Run tests (`cargo test --all-features`)
+5. Run linter (`cargo clippy -- -D warnings`)
+6. Format code (`cargo fmt`)
+7. Commit changes (`git commit -m 'Add amazing feature'`)
+8. Push to branch (`git push origin feature/amazing-feature`)
+9. Open a Pull Request
 
-- **Telegram**: [SilverBitcoin Labs](https://t.me/SilverBitcoinLabs)
-- **Twitter**: [@SilverBitcoinLabs](https://x.com/silverbitcoinlabs)
-- **GitHub**: Contribute to the codebase
-- **Medium**: Technical articles
+## 📜 License
 
-### Governance
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-- Submit improvement proposals
-- Vote on network changes
-- Become a validator
-- Join ambassador program
+## 🌟 Acknowledgments
 
----
+- Inspired by Bitcoin's vision of financial freedom
+- Built on research from All layer 1 blockchains and the Bitcoin protocol
+- Quantum-resistant cryptography from NIST PQC standards
+- Community-driven development
 
-## 🆘 Support
+## 📞 Contact
 
-### Community Support
-- 💬 Telegram: Real-time help
-- 🐛 GitHub Issues: Bug reports
-- 📧 Email: info@silverbitcoin.org
-
-### Professional Support
-- Enterprise support packages
-- Custom development services
-- Training and certification
+- **Website**: https://silverbitcoin.org
+- **Twitter**: [@SilverBitcoin](https://twitter.com/silverbitcoin)
+- **Discord**: https://discord.gg/silverbitcoin
+- **Email**: team@silverbitcoin.org
 
 ---
 
-## 📄 License
-
-Creative Commons Attribution 4.0 International License (CC BY 4.0) - see [LICENSE](LICENSE) file for details.
-
----
-
-## ⚠️ Disclaimer
-
-Blockchain technology involves inherent risks. Users should:
-- Understand the technology before using
-- Never invest more than they can afford to lose
-- Keep private keys secure and backed up
-- Verify all transactions before confirming
-
----
-
-<div align="center">
-
-**Built with ❤️ by the SilverBitcoin Foundation**
-
-⭐ Star us on GitHub — it helps!
-
-[Website](https://silverbitcoin.org) • [Explorer](https://blockchain.silverbitcoin.org) • [Telegram](https://t.me/SilverBitcoinLabs)
-
-*Empowering the decentralized future, one block at a time.*
-
-</div>
-
----
-
-*Last updated: November 2025*
+**Remember**: *You didn't miss Bitcoin. You found something better.* 🚀
