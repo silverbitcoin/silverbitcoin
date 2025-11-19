@@ -1,0 +1,40 @@
+{
+  "chain_id": "silverbitcoin-mainnet-1",
+  "genesis_time": "2024-01-01T00:00:00Z",
+  "protocol_version": {
+    "major": 1,
+    "minor": 0
+  },
+  "validators": [
+    {
+      "address": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "protocol_pubkey": "0x...",
+      "network_pubkey": "0x...",
+      "worker_pubkey": "0x...",
+      "stake_amount": 10000000,
+      "network_address": "/ip4/validator1.silverbitcoin.org/tcp/9000",
+      "p2p_address": "/ip4/validator1.silverbitcoin.org/tcp/9001"
+    }
+  ],
+  "initial_supply": 21000000000000,
+  "initial_accounts": [
+    {
+      "address": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "balance": 1000000000000
+    }
+  ],
+  "consensus_config": {
+    "snapshot_interval_ms": 480,
+    "max_batch_transactions": 500,
+    "max_batch_size_bytes": 524288,
+    "byzantine_fault_tolerance": 0.33
+  },
+  "fuel_config": {
+    "min_fuel_price": 1000,
+    "max_fuel_per_transaction": 50000000
+  },
+  "network_config": {
+    "max_peers": 50,
+    "message_rate_limit": 10000
+  }
+}

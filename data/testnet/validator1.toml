@@ -1,0 +1,48 @@
+[network]
+listen_address = "0.0.0.0:9000"
+external_address = "127.0.0.1:9000"
+p2p_address = "0.0.0.0:9000"
+max_peers = 50
+
+[consensus]
+is_validator = true
+validator_key_path = "./data/testnet/keys/validator1.json"
+snapshot_interval_ms = 480
+max_batch_transactions = 500
+max_batch_size_bytes = 524288
+
+[storage]
+db_path = "./data/testnet/validator1/db"
+snapshot_retention_days = 30
+enable_pruning = true
+object_cache_size = 1073741824
+
+[api]
+json_rpc_address = "0.0.0.0:9001"
+websocket_address = "0.0.0.0:9002"
+enable_cors = true
+cors_origins = []
+rate_limit_per_second = 100
+max_batch_size = 50
+
+[metrics]
+prometheus_address = "0.0.0.0:9003"
+enable_metrics = true
+update_interval_seconds = 1
+
+[logging]
+level = "info"
+log_path = "./logs/validator1.log"
+json_format = false
+max_log_size_mb = 100
+max_log_files = 10
+
+[execution]
+worker_threads = 16
+numa_aware = false
+fuel_price = 1000
+
+[gpu]
+enable_gpu = false
+backend = "auto"
+min_batch_size = 100

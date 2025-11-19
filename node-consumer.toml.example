@@ -1,0 +1,268 @@
+# SilverBitcoin Node Configuration for Consumer Hardware
+# Optimized for 16GB RAM and 500GB storage
+# 
+# This configuration is designed to run efficiently on consumer-grade hardware
+# while maintaining security and reasonable performance.
+#
+# Hardware Requirements:
+# - CPU: 4+ cores (8+ recommended)
+# - RAM: 16GB minimum
+# - Storage: 500GB SSD (NVMe recommended)
+# - Network: 100Mbps+ bandwidth
+
+[network]
+# Network listening address
+listen_address = "0.0.0.0:9000"
+
+# External address advertised to peers
+external_address = "YOUR_PUBLIC_IP:9000"
+
+# P2P communication address
+p2p_address = "0.0.0.0:9001"
+
+# OPTIMIZED: Reduced peer connections for lower memory usage
+max_peers = 25  # Reduced from 50 to save ~200MB RAM
+
+# Seed nodes for initial peer discovery
+seed_nodes = [
+    "/ip4/seed1.silverbitcoin.org/tcp/9000/p2p/12D3KooW...",
+    "/ip4/seed2.silverbitcoin.org/tcp/9000/p2p/12D3KooW...",
+]
+
+[consensus]
+# Enable validator mode (requires staking)
+is_validator = false
+
+# Path to validator key file (required if is_validator = true)
+# validator_key_path = "/etc/silver/validator.key"
+
+# Validator stake amount (minimum 1,000,000 SBTC)
+# stake_amount = 1000000
+
+# Snapshot interval in milliseconds (default: 480ms)
+snapshot_interval_ms = 480
+
+# OPTIMIZED: Smaller batch sizes for lower memory usage
+max_batch_transactions = 250  # Reduced from 500 to save memory
+max_batch_size_bytes = 262144  # 256 KB (reduced from 512 KB)
+
+[storage]
+# Database path
+db_path = "./data/db"
+
+# OPTIMIZED: Aggressive pruning for 500GB storage limit
+snapshot_retention_days = 7  # Reduced from 30 to save disk space
+
+# Enable automatic pruning (CRITICAL for consumer hardware)
+enable_pruning = true
+
+# OPTIMIZED: Reduced cache size for 16GB RAM systems
+# Total memory budget breakdown:
+# - OS: ~2GB
+# - RocksDB block cache: 512MB
+# - Object cache: 256MB
+# - Network buffers: ~1GB
+# - Execution engine: ~2GB
+# - Other processes: ~2GB
+# - Safety margin: ~8GB
+object_cache_size = 268435456  # 256MB (reduced from 1GB)
+
+# OPTIMIZED: Additional storage settings for consumer hardware
+[storage.rocksdb]
+# Reduced block cache for lower memory usage
+block_cache_size = 536870912  # 512MB (reduced from 1GB)
+
+# Enable aggressive compression to save disk space
+compression_type = "zstd"  # Better compression than LZ4
+compression_level = 3  # Balanced compression/speed
+
+# Limit write buffer size to reduce memory usage
+write_buffer_size = 67108864  # 64MB (reduced from default)
+max_write_buffer_number = 2  # Reduced from 3
+
+# Limit open files to reduce memory overhead
+max_open_files = 1000  # Reduced from 10000
+
+# Enable more aggressive compaction to save disk space
+compaction_style = "level"
+level_compaction_dynamic_level_bytes = true
+
+# OPTIMIZED: Pruning configuration for 500GB storage
+[storage.pruning]
+# Enable aggressive pruning
+enabled = true
+
+# Keep only recent snapshots (7 days)
+snapshot_retention_days = 7
+
+# Prune old object versions aggressively
+object_version_retention = 1000  # Keep last 1000 versions per object
+
+# Prune old transactions (keep only recent)
+transaction_retention_days = 7
+
+# Prune old events
+event_retention_days = 7
+
+# Run pruning more frequently
+pruning_interval_hours = 6  # Every 6 hours
+
+# Target maximum database size (400GB to leave headroom)
+target_db_size_gb = 400
+
+[api]
+# JSON-RPC HTTP address
+json_rpc_address = "0.0.0.0:9545"
+
+# WebSocket address for subscriptions
+websocket_address = "0.0.0.0:9546"
+
+# Enable CORS
+enable_cors = true
+
+# Allowed CORS origins (empty = allow all)
+cors_origins = []
+
+# Rate limit per client IP (requests per second)
+rate_limit_per_second = 100
+
+# Maximum batch request size
+max_batch_size = 50
+
+# OPTIMIZED: Limit concurrent connections to save memory
+max_connections = 100  # Reduced from unlimited
+
+# OPTIMIZED: Limit WebSocket subscriptions per connection
+max_subscriptions_per_connection = 5  # Reduced from 10
+
+[metrics]
+# Prometheus metrics endpoint
+prometheus_address = "0.0.0.0:9184"
+
+# Enable metrics collection
+enable_metrics = true
+
+# Metrics update interval in seconds
+update_interval_seconds = 1
+
+[logging]
+# Log level: trace, debug, info, warn, error
+level = "info"
+
+# Log output path
+log_path = "./logs/node.log"
+
+# Enable JSON structured logging
+json_format = false
+
+# OPTIMIZED: Aggressive log rotation to save disk space
+max_log_size_mb = 50  # Reduced from 100
+max_log_files = 5  # Reduced from 10
+
+[execution]
+# OPTIMIZED: Reduced worker threads for 16GB RAM
+# Use fewer threads to reduce memory overhead
+worker_threads = 4  # Reduced from 16 for consumer hardware
+
+# Disable NUMA on consumer hardware (usually not available)
+numa_aware = false
+
+# Fuel price (MIST per fuel unit)
+fuel_price = 1000
+
+# OPTIMIZED: Limit parallel execution to reduce memory usage
+max_parallel_transactions = 100  # Limit concurrent execution
+
+# OPTIMIZED: Smaller execution cache
+execution_cache_size = 10000  # Reduced from default
+
+[gpu]
+# Disable GPU acceleration by default on consumer hardware
+# (Most consumer systems don't have suitable GPUs)
+enable_gpu = false
+
+# GPU backend: opencl, cuda, metal, auto
+backend = "auto"
+
+# Minimum batch size for GPU execution
+min_batch_size = 100
+
+[memory]
+# OPTIMIZED: Memory management settings for 16GB RAM
+
+# Total memory budget (in bytes) - leave 8GB for OS and other processes
+max_memory_usage = 8589934592  # 8GB
+
+# Enable memory monitoring and warnings
+enable_memory_monitoring = true
+
+# Warn when memory usage exceeds threshold
+memory_warning_threshold = 0.85  # 85% of max_memory_usage
+
+# Emergency memory management: start aggressive cleanup at this threshold
+memory_critical_threshold = 0.95  # 95% of max_memory_usage
+
+# Memory check interval (seconds)
+memory_check_interval = 30
+
+[performance]
+# OPTIMIZED: Performance tuning for consumer hardware
+
+# Disable some expensive features to save resources
+enable_detailed_metrics = false  # Reduce metrics overhead
+enable_transaction_tracing = false  # Disable detailed tracing
+
+# Reduce background task frequency
+background_task_interval_seconds = 60  # Run less frequently
+
+# Limit query result sizes to save memory
+max_query_results = 1000  # Limit result set size
+
+# Enable query result streaming for large queries
+enable_result_streaming = true
+
+[network.optimization]
+# OPTIMIZED: Network settings for consumer bandwidth
+
+# Reduce message buffer sizes
+send_buffer_size = 1048576  # 1MB (reduced from default)
+recv_buffer_size = 1048576  # 1MB (reduced from default)
+
+# Limit concurrent downloads during sync
+max_concurrent_downloads = 4  # Reduced from 8
+
+# Enable bandwidth throttling if needed
+# max_bandwidth_mbps = 50  # Uncomment to limit bandwidth
+
+[sync]
+# OPTIMIZED: Sync settings for consumer hardware
+
+# Use snapshot sync instead of full history sync
+sync_mode = "snapshot"  # Fast sync from recent snapshot
+
+# Limit sync batch size to reduce memory usage
+sync_batch_size = 100  # Reduced from 1000
+
+# Sync in smaller chunks to avoid memory spikes
+sync_chunk_size = 10000  # Transactions per chunk
+
+# Enable incremental sync to reduce memory usage
+incremental_sync = true
+
+[monitoring]
+# OPTIMIZED: Monitoring settings for consumer hardware
+
+# Enable resource monitoring
+enable_resource_monitoring = true
+
+# Alert thresholds
+cpu_warning_threshold = 80  # Warn at 80% CPU usage
+memory_warning_threshold = 85  # Warn at 85% memory usage
+disk_warning_threshold = 90  # Warn at 90% disk usage
+
+# Auto-adjust performance based on resource usage
+enable_auto_tuning = true
+
+# Reduce performance when resources are constrained
+auto_tune_interval_seconds = 300  # Check every 5 minutes
+

@@ -1,0 +1,40 @@
+[package]
+name = "silver-coordinator"
+version = "0.1.0"
+edition = "2021"
+authors = ["SilverBitcoin Team"]
+description = "Transaction coordinator for SilverBitcoin blockchain"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+# Workspace dependencies
+silver-core = { path = "../silver-core" }
+silver-consensus = { path = "../silver-consensus" }
+silver-execution = { path = "../silver-execution" }
+silver-storage = { path = "../silver-storage" }
+silver-crypto = { path = "../silver-crypto" }
+
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+async-trait = "0.1"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"
+
+# Logging
+tracing = "0.1"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Collections
+dashmap = "5.5"
+
+# Time
+chrono = "0.4"
+
+[dev-dependencies]
+tokio-test = "0.4"
+tempfile = "3.8"

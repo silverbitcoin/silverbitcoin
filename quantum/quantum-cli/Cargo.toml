@@ -1,0 +1,47 @@
+[package]
+name = "quantum-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Quantum package manager and build tool"
+
+[[bin]]
+name = "quantum"
+path = "src/main.rs"
+
+[dependencies]
+# Core
+silver-core = { path = "../../crates/silver-core" }
+quantum-compiler = { path = "../quantum-compiler" }
+quantum-vm = { path = "../quantum-vm" }
+
+# Workspace dependencies
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# CLI
+clap = { workspace = true }
+dialoguer = { workspace = true }
+indicatif = { workspace = true }
+colored = { workspace = true }
+
+# HTTP client for registry
+reqwest = { version = "0.11", features = ["json"] }
+base64 = { workspace = true }
+blake3 = { workspace = true }
+bincode = { workspace = true }
+
+# Archive support
+tar = "0.4"
+
+[dev-dependencies]
+tempfile = { workspace = true }

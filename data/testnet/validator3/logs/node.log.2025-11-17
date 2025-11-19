@@ -1,0 +1,1 @@
+2025-11-17T18:57:10.013412Z  INFO ThreadId(01) silver_node::logging: crates/silver-node/src/logging.rs:121: Logging system initialized log_level=info log_path="data/testnet/validator3/logs/node.log" json_format=false max_log_files=10
