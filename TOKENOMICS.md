@@ -1,4 +1,4 @@
-# ✅ SilverBitcoin Tokenomics - APPROVED
+# ✅ SilverBitcoin Tokenomics 
 ## Hybrid Model
 
 ## 🎯 Core Principle: 1 Billion Hard Cap
@@ -14,13 +14,16 @@
 | Category | Amount | Percentage | Vesting |
 |----------|--------|------------|---------|
 | **Validator Rewards Pool** | 500M SBTC | 50% | Emission over 20 years |
-| **Community Reserve** | 80M SBTC | 8% | Gradual unlock over 10 years |
-| **Presale/Public** | 100M SBTC | 10% | Multi-stage (Avalanche-inspired) |
-| **Team & Advisors** | 100M SBTC | 10% | 4 year vest (1 year cliff) |
+| **Community Reserve** | 80M SBTC | 8% | Gradual unlock over 5 years |
+| **Seed Round** | 20M SBTC | 2% | 20% TGE, 80% over 12 months |
+| **Private Sale** | 20M SBTC | 2% | 30% TGE, 70% over 8 months |
+| **Public Sale** | 60M SBTC | 6% | 50% TGE, 50% over 4 months |
+| **Team & Advisors** | 90M SBTC | 9% | 4 year vest (1 year cliff) |
 | **Foundation** | 90M SBTC | 9% | Operations & development |
 | **Early Investors** | 60M SBTC | 6% | 2 year vest (6 month cliff) |
 | **Ecosystem Fund** | 60M SBTC | 6% | 5 years for grants/partnerships |
 | **Airdrop** | 10M SBTC | 1% | Community distribution |
+| **Validators** | 10M SBTC | 1% | Immediate allocation |
 
 **Total:** 1,000,000,000 SBTC (100%)
 
