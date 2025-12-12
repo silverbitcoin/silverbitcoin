@@ -427,7 +427,7 @@ pub enum ObjectType {
 
 ### 10.1 Token Standard
 
-Complete ERC-20-like token system with:
+Complete SBTC-20 token system with:
 
 - **Token Creation**: Create custom tokens with name, symbol, decimals, initial supply
 - **Token Transfer**: Transfer tokens between accounts
@@ -439,17 +439,38 @@ Complete ERC-20-like token system with:
 
 ### 10.2 Token Operations
 
+#### SilverBitcoin Native Methods
 ```
-eth_createToken(name, symbol, decimals, initial_supply, creator)
-eth_transfer(token, from, to, amount, tx_digest, block_number)
-eth_approve(token, owner, spender, amount, tx_digest, block_number)
-eth_transferFrom(token, from, to, amount, spender, tx_digest, block_number)
-eth_mint(token, to, amount, tx_digest, block_number)
-eth_burn(token, from, amount, tx_digest, block_number)
-eth_balanceOf(token, account)
-eth_allowance(token, owner, spender)
-eth_tokenMetadata(token)
-eth_listTokens()
+silver_getObject(id)                              - Get an object by ID
+silver_getObjectsByOwner(owner, limit)            - Get objects owned by an address
+silver_getTransaction(digest)                     - Get a transaction by digest
+silver_getBalance(address)                        - Get balance of an address
+silver_estimateGas(commands)                      - Estimate gas for a transaction
+silver_getLatestBlockNumber()                     - Get the latest block number
+silver_getBlockByNumber(block_number)             - Get block by number
+silver_getValidators()                            - Get current validator set
+silver_getNetworkStats()                          - Get network statistics (TPS, validators, health)
+silver_getTransactionsByAddress(address, limit)   - Get transactions for an address
+silver_getGasPrice()                              - Get current gas price
+silver_getTransactionReceipt(digest)              - Get transaction receipt
+silver_getTransactionByHash(hash)                 - Get transaction by hash
+silver_getCode(address)                           - Get code for an address (smart contracts)
+silver_getTransactionCount(address)               - Get transaction count for an address
+silver_getEvents(criteria)                        - Get events filtered by criteria
+silver_getCheckpoint(sequence)                    - Get checkpoint at specific sequence number
+silver_getLatestCheckpoint()                      - Get latest checkpoint
+silver_queryEvents(filters, limit, offset)        - Query events with pagination
+silver_getObjectsOwnedByAddress(address)          - Get all objects owned by address
+silver_getObjectsOwnedByObject(object_id)         - Get objects owned by another object
+silver_getObjectHistory(object_id)                - Get object version history
+silver_getAccountInfo(address)                    - Get account information
+silver_getTransactionHistory(address)             - Get transaction history for an address
+silver_getBlockByHash(hash)                       - Get block by hash
+silver_call(to, data)                             - Execute a call against contract state
+silver_getStorageAt(address, key)                 - Get storage value at specific address and key
+silver_getBlock(block_identifier)                 - Get block by number or hash
+silver_submitTransaction(tx_data)                 - Submit a transaction to the blockchain
+silver_dryRunTransaction(tx_data)                 - Dry run a transaction without submitting
 ```
 
 ### 10.3 Token Metadata
