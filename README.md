@@ -2,6 +2,7 @@
 <div align="center">
 
 ![SilverBitcoin Logo](logo.png)
+</div>
 **"You didn't miss Bitcoin. You found something better."**
 
 [![Build Status](https://img.shields.io/github/workflow/status/silverbitcoin/silverbitcoin/CI)](https://github.com/silverbitcoin/silverbitcoin/actions)
@@ -242,15 +243,17 @@ silver query --tx <transaction-digest>
 
 | Category | Amount | Percentage | Vesting |
 |----------|--------|-----------|---------|
-| **Validator Rewards** | 490M | 49% | 20 years |
-| **Presale/Public** | 100M | 10% | 4 years |
-| **Team & Advisors** | 100M | 10% | 4 years (1yr cliff) |
-| **Foundation** | 90M | 9% | 5 years |
-| **Community Reserve** | 80M | 8% | 5 years |
-| **Early Investors** | 60M | 6% | 2 years (6mo cliff) |
-| **Ecosystem Fund** | 60M | 6% | 5 years |
-| **Airdrop** | 10M | 1% | 2 years |
-| **Validators** | 10M | 1% | Immediate |
+| **Validator Rewards Pool** | 500M | 50% | Emission over 20 years |
+| **Community Reserve** | 80M | 8% | Gradual unlock over 5 years |
+| **Seed Round** | 20M | 2% | 20% TGE, 80% over 12 months |
+| **Private Sale** | 20M | 2% | 30% TGE, 70% over 8 months |
+| **Public Sale** | 60M | 6% | 50% TGE, 50% over 4 months |
+| **Team & Advisors** | 90M | 9% | 4 year vest (1 year cliff) |
+| **Foundation** | 90M | 9% | Operations & development |
+| **Early Investors** | 60M | 6% | 2 year vest (6 month cliff) |
+| **Ecosystem Fund** | 60M | 6% | 5 years for grants/partnerships |
+| **Airdrop** | 10M | 1% | Community distribution |
+| **Validators** | 10M | 1% | Immediate allocation |
 
 ### Emission Schedule
 
@@ -261,23 +264,59 @@ silver query --tx <transaction-digest>
 | **Maturity** | 11-20 | 10M SBTC/year | 70% | Deflationary |
 | **Perpetual** | 20+ | 0 SBTC/year | 80% | Ultra-deflationary |
 
+### Initial Circulating Supply (TGE)
+
+**Total: 70M SBTC (7% of total supply)**
+
+- Seed Round TGE: 4M SBTC (20%)
+- Private Sale TGE: 6M SBTC (30%)
+- Public Sale TGE: 30M SBTC (50%)
+- Liquidity Pool: 10M SBTC
+- Marketing/Airdrops: 10M SBTC
+- Team (initial): 5M SBTC
+- Foundation (initial): 5M SBTC
+
+**Initial Market Cap**: $210M (at $3.00 listing price)
+**Fully Diluted Valuation**: $3B
+
 ---
 
 ## Token System
 
 ### Token Operations
 
+#### SilverBitcoin Native Methods
 ```
-eth_createToken(name, symbol, decimals, initial_supply, creator)
-eth_transfer(token, from, to, amount, tx_digest, block_number)
-eth_approve(token, owner, spender, amount, tx_digest, block_number)
-eth_transferFrom(token, from, to, amount, spender, tx_digest, block_number)
-eth_mint(token, to, amount, tx_digest, block_number)
-eth_burn(token, from, amount, tx_digest, block_number)
-eth_balanceOf(token, account)
-eth_allowance(token, owner, spender)
-eth_tokenMetadata(token)
-eth_listTokens()
+silver_getObject(id)                              - Get an object by ID
+silver_getObjectsByOwner(owner, limit)            - Get objects owned by an address
+silver_getTransaction(digest)                     - Get a transaction by digest
+silver_getBalance(address)                        - Get balance of an address
+silver_estimateGas(commands)                      - Estimate gas for a transaction
+silver_getLatestBlockNumber()                     - Get the latest block number
+silver_getBlockByNumber(block_number)             - Get block by number
+silver_getValidators()                            - Get current validator set
+silver_getNetworkStats()                          - Get network statistics (TPS, validators, health)
+silver_getTransactionsByAddress(address, limit)   - Get transactions for an address
+silver_getGasPrice()                              - Get current gas price
+silver_getTransactionReceipt(digest)              - Get transaction receipt
+silver_getTransactionByHash(hash)                 - Get transaction by hash
+silver_getCode(address)                           - Get code for an address (smart contracts)
+silver_getTransactionCount(address)               - Get transaction count for an address
+silver_getEvents(criteria)                        - Get events filtered by criteria
+silver_getCheckpoint(sequence)                    - Get checkpoint at specific sequence number
+silver_getLatestCheckpoint()                      - Get latest checkpoint
+silver_queryEvents(filters, limit, offset)        - Query events with pagination
+silver_getObjectsOwnedByAddress(address)          - Get all objects owned by address
+silver_getObjectsOwnedByObject(object_id)         - Get objects owned by another object
+silver_getObjectHistory(object_id)                - Get object version history
+silver_getAccountInfo(address)                    - Get account information
+silver_getTransactionHistory(address)             - Get transaction history for an address
+silver_getBlockByHash(hash)                       - Get block by hash
+silver_call(to, data)                             - Execute a call against contract state
+silver_getStorageAt(address, key)                 - Get storage value at specific address and key
+silver_getBlock(block_identifier)                 - Get block by number or hash
+silver_submitTransaction(tx_data)                 - Submit a transaction to the blockchain
+silver_dryRunTransaction(tx_data)                 - Dry run a transaction without submitting
 ```
 
 ---
